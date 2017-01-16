@@ -1,0 +1,126 @@
+/* Empty. Add your own CSS if you like */
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 19/02/2016 14:50
+    */
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("fonts/Flaticon.eot");
+  src: url("fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("fonts/Flaticon.woff") format("woff"),
+       url("fonts/Flaticon.ttf") format("truetype"),
+       url("fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+.flaticon-bacon-and-eggs:before { content: "\f100"; }
+.flaticon-breakfast:before { content: "\f101"; }
+.flaticon-burger-and-potatoes:before { content: "\f102"; }
+.flaticon-cheese:before { content: "\f103"; }
+.flaticon-chef:before { content: "\f104"; }
+.flaticon-chef-hat:before { content: "\f105"; }
+.flaticon-cherries:before { content: "\f106"; }
+.flaticon-cocktail:before { content: "\f107"; }
+.flaticon-coffe-cup:before { content: "\f108"; }
+.flaticon-cooking:before { content: "\f109"; }
+.flaticon-croisant:before { content: "\f10a"; }
+.flaticon-cupcake:before { content: "\f10b"; }
+.flaticon-dish:before { content: "\f10c"; }
+.flaticon-gingerbreadman:before { content: "\f10d"; }
+.flaticon-ice-cream:before { content: "\f10e"; }
+.flaticon-ice-cream-1:before { content: "\f10f"; }
+.flaticon-kitchen:before { content: "\f110"; }
+.flaticon-knife:before { content: "\f111"; }
+.flaticon-marmalade:before { content: "\f112"; }
+.flaticon-meat:before { content: "\f113"; }
+.flaticon-meat-1:before { content: "\f114"; }
+.flaticon-mushroom:before { content: "\f115"; }
+.flaticon-octopus:before { content: "\f116"; }
+.flaticon-pizza:before { content: "\f117"; }
+.flaticon-potatoes:before { content: "\f118"; }
+.flaticon-restaurant:before { content: "\f119"; }
+.flaticon-rice:before { content: "\f11a"; }
+.flaticon-salad:before { content: "\f11b"; }
+.flaticon-salt-and-pepper:before { content: "\f11c"; }
+.flaticon-salty:before { content: "\f11d"; }
+.flaticon-taco:before { content: "\f11e"; }
+.flaticon-teapot:before { content: "\f11f"; }
+.flaticon-thigh:before { content: "\f120"; }
+.flaticon-vegetables:before { content: "\f121"; }
+.flaticon-watermellon:before { content: "\f122"; }
+.flaticon-wine:before { content: "\f123"; }
+
+.item-floating-label {
+    display: block;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    border : 0px;
+}
+
+.login-container > .button-row img {
+    max-width: 80%;
+}
+
+.login-container > .header {
+    -webkit-flex: 4;
+    padding-top: 20px;
+}
+
+.button.button-custom {
+    border-color: rgba(0, 0, 0, 0);
+    background-color: #FF0A21;
+    color: #fff;
+}
+.button.button-custom:active{
+    background-color: #9A000E;
+    color:white;
+}
+
+
+.item-thumbnail-left, .item-thumbnail-left .item-content{
+    border-color: #ECECEC;
+}
+
+
+
+
+.item-thumbnail-left > i:first-child, .item-thumbnail-left .item-image, .item-thumbnail-left .item-content > i:first-child, .item-thumbnail-left .item-content .item-image {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    max-width: 80px;
+    max-height: 80px;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-pager .slider-pager-page {
+    color: #f1c504!important;
+}
+
+
+

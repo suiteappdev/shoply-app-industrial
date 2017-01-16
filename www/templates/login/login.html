@@ -1,0 +1,35 @@
+ <ion-view view-title="Ingresar" name="login-view" hide-nav-bar="true" >
+  <ion-content class="padding" ng-controller="loginCtrl" ng-init="load()" style="background-color:#080A35;background-image:url('img/presentation-2.jpg');background-size: cover;background-position: center;">
+        <section class="login-container">
+            <div class = "col header text-center">
+               <img src="./img/ionic.png" class = "logo" />
+            </div>
+          
+        </section>
+    <div class="list">
+      <form name="loginForm" novalidate>
+         <label class="item item-input item-floating-label">
+         <span style="color:white;" class="input-label">Correo Electronico</span>
+         <input style="color:white;" type="email" required name="old" ng-model="form.data.email" placeholder="Correo">
+         </label>
+         <label class="item item-input item-floating-label">
+         <span style="color:white;" class="input-label">Contraseña</span>
+         <input style="color:white;" type="password" required name="newpwd" ng-model="form.data.password" placeholder="Contraseña">
+         </label>
+      <div>
+        <br>
+        <button class="button button-block button-custom" ng-click="login()">
+          Entrar
+        </button>
+      </div>
+      </form>
+      <div class = "col text-center" style="color:white;">
+         Aun no tienes cuenta ? <strong><a class="register-text" href = "#" ui-sref="register">Registrate!</a></strong>
+      </div>
+    </div>
+    <div class="col">
+      <p style="color:white;text-align:center;margin-bottom: 2px;font-weight: lighter;">Powered by suiteapp</p>
+      <p style="color:white;text-align:center;">2016</p>
+    </div>
+  </ion-content>
+</ion-view>

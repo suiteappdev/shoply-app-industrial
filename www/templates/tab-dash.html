@@ -1,0 +1,82 @@
+<ion-view view-title="Categorias" style="background-color: #F1F1F1;background-image:url('img/background-content.png')">
+<div ng-controller="dashboardCtrl" ng-init="load()">
+           <!--
+			<div class="bar bar-subheader" style="height:auto!important;" ng-show="$root.showSearch">
+		 		<div class="bar bar-header item-input-inset"  style="border: 0px;background-image: none;">
+				  <label class="item-input-wrapper">
+				    <i class="icon ion-android-search placeholder-icon"></i>
+				    <input type="search" ng-model="search" placeholder="Buscar">
+				  </label>
+				</div>
+			</div>    
+          -->
+	  <ion-content style="margin-top: 0px;" class="" ng-class="$root.showSearch ? 'has-subheader' : ''">
+
+		<div class="content padding"   ng-show="records.length == 0 && products.length == 0">
+	      <div class="padding-example text-center">
+	        <div>
+	        	<i style="font-size: 100px;color:#C5C5C5" class="icon ion-android-sad"></i>
+	        	<p>No existen productos</p>
+				<a ng-click="toDashboard()" style="color:#848484;font-size:14px;text-decoration:none;" href=""><i style="color: orange;" class="icon ion-arrow-left"></i>Regresar</a>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="list">
+	       <div class="item item-thumbnail-left" ng-repeat="record in records | filter:search" ng-click="browse(record, false)">
+	       	  <img style="width:80px" ng-src="{{record.data.gallery[0].URL}}">
+	          <h3>{{record.text.toUpperCase()}}</h3>
+	          <span>{{record._company.data.empresa || 'sin empresa' }}</span>
+	       </div>
+	    </div>
+		<div class="list card" ng-repeat="record in products | filter:search">
+		 <div class="item item-avatar">
+		    <img ng-src="{{record._company.data.gallery[0].URL}}">
+		    <h2>{{record._company.data.empresa}}</h2>
+		    <p>{{record._company.data.descripcion}}</p>
+		  </div>
+		<div class="item item-body">
+		<ion-slide-box on-double-tap="add()">
+		  <ion-slide ng-repeat="media in record.gallery">
+		  	<img class="full-image" preload-image ng-src="{{media.URL}}" default-image="img/loader.gif" fallback-image="img/loader.gif" />
+		  </ion-slide>
+		</ion-slide-box>
+			<div class="row">
+				<div class="col">
+					<h3>{{record.producto}}</h3>
+				</div>
+			</div>
+		    <div class="row">
+		    	<div class="col">
+			    	<div class="" style="text-align:left;">
+			    		<strong>{{record.precio_VentaFacturado || record.precio_venta  | currency:"$ "}}</strong>
+			    	</div>		    		
+		    	</div>
+		    	<div class="col">
+			    	<div ng-show="record.cantidad > 0" class="" style="text-align:right;">
+			    		<a ng-click="agregarDescuento()" style="color:#848484;font-size:14px;text-decoration:none;" href=""><i style="color: orange;" class="icon ion-plus-circled"></i>  Descuento</a>
+			    	</div>		    		
+		    	</div>
+		    </div>
+		    <p>
+		      <a href="#" class="subdued">{{record._like.length || 0}} Me Gusta</a>
+		      <a href="#" class="subdued">{{record.comments.length || 0}} Comentarios</a>
+		    </p>
+		</div>
+		<div class="item custom-list-tab tabs tabs-secondary tabs-icon-left">
+		    <a class="tab-item action-product" ng-click="like()" href="#">
+		      <i class="icon ion-thumbsup"></i>
+		      Me Gusta
+		    </a>
+		    <a class="tab-item action-product"  href="#/tab/comments/{{record._id}}/{{$index}}">
+		      <i class="icon ion-chatbox"></i>
+		      Comentar
+		    </a>
+		    <a class="tab-item action-product" on-tap="add()" href="#">
+		      <i class="icon ion-android-cart"></i>
+		      Pedir
+		    </a>
+		  </div>
+		</div>
+	  </ion-content>	
+</div>
+</ion-view>

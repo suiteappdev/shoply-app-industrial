@@ -1,0 +1,24 @@
+<ion-view view-title="Opciones" style="background-color: #F1F1F1;background-image:url('img/background-content.png')"> 
+  <ion-content ng-controller="settingCtrl" >
+    <ion-list>
+        <li class="item item-toggle">
+             Habilitar Ubicación
+             <label class="toggle toggle-assertive">
+               <input type="checkbox" ng-change="gps()" ng-model="allowGPS">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+        </li>
+        <li class="item item-toggle">
+             Almacenamiento Local
+             <label class="toggle toggle-assertive">
+               <input type="checkbox" ng-change="local()" ng-model="allowLocal">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+        </li>
+    </ion-list>
+  </ion-content>
+</ion-view>

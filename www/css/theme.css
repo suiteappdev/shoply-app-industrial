@@ -1,0 +1,102 @@
+.bar-footer {
+    bottom: 0;
+    border-top-width: 1px;
+    border-bottom-width: 0;
+    background-position: top;
+    height: 44px;
+    background-color: gainsboro;
+    border: none!important; 
+}
+
+.footer-label{
+    position: relative;
+    top: -17px;
+    left: 0px;
+    font-size: 10px;
+    font-weight: 400;
+    color: #484242;
+}
+
+.footer-value{
+    font-size: 11px;
+    text-align: left;
+    width: 100%;
+    display: block;
+    position: relative;
+    top: -14px;
+    text-align: center;
+}
+
+
+/* textos */
+.register-text{
+    color:#FF0A21;
+}
+
+.badge.badge-positive{
+    background-color:yellow!important;
+    color: white!important;
+}
+
+.sub-footer-text{
+    color: black;
+}
+
+.button.button-custom {
+    border-color: rgba(0, 0, 0, 0);
+    background-color: #FF0A21;
+    color: #fff;
+}
+
+.bar-header{
+
+}
+
+.bar .title{
+    color:gray;
+}
+
+.tabs{
+
+}
+
+.tab-item .icon {
+    color: gray;
+}
+
+.action-product{
+    color: gray!important;
+}
+
+.action-product i{
+    color: gray!important;
+}
+
+.tab-title{
+    color:gray;
+}
+
+.bar-stable .button.button-clear {
+    color: #FFF!important;
+}
+
+.badge-tiny{
+    font-size: 9px;
+    position: absolute!important;
+    top: 13px!important;
+    right: 4px!important;
+    font-weight: 100;
+}
+
+.label-darkblue {
+    background-color: #001c24!important;
+}
+
+.custom-list-tab{
+    background-color: #313131!important;
+    border-top: #FFF;
+}
+
+.slider-pager .slider-pager-page {
+    color: gray!important;
+}

@@ -1,0 +1,21 @@
+<ion-view view-title="Opciones" style="background-color: #F1F1F1;background-image:url('img/background-content.png')"> 
+  <ion-content ng-controller="OptionsCtrl" >
+    <ion-list>
+        <ion-item ui-sref="tab.request">
+            Mis Pedidos
+        </ion-item>
+        <ion-item ui-sref="tab.cliente">
+            Crear Clientes
+        </ion-item>
+        <ion-item ui-sref="tab.setting">
+            Configuración
+        </ion-item>
+        <ion-item ui-sref="tab.password-reset">
+            Cambiar Clave
+        </ion-item>
+        <ion-item ng-click="closeSession()">
+            Cerrar Session
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

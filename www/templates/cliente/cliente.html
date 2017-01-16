@@ -1,0 +1,72 @@
+<ion-view view-title="Crear Cliente" style="background-color: #F1F1F1;background-image:url('img/background-content.png')">
+  <ion-content class="" ng-controller="ClienteCtrl" ng-init="load()">
+	<div class="list" ng-show="tab == 'NA'">
+		<form name="formClientNA">
+			  <label class="item item-input">
+			    <input type="text" ng-model="form.name" placeholder="Primer Nonbre">
+			  </label>
+			  <label class="item item-input">
+			    <input type="text" ng-model="form.last_name" placeholder="Segundo Nombre">
+			  </label>
+			<label class = "item item-input item-select">
+			   <div class = "input-label">
+			      Documento
+			   </div>
+			   <select ng-model="form.data.documento">
+			      <option  value="CC" >Cedula de Ciudadania</option>
+			      <option  value="CE" >Cedula de Extranjeria</option>
+			      <option  value="DI" >Documento de Identidad</option>
+			   </select>
+			</label>
+			  <label class="item item-input">
+			    <input type="number" ng-model="form.data.numero_documento" placeholder="Numero Documento">
+			  </label>
+			  <label class="item item-input">
+			    <input type="text" ng-model="form.email" placeholder="Email">
+			  </label>
+			  <label class="item item-input">
+			    <input type="number" ng-model="form.data.phone" placeholder="Numero Telefonico">
+			  </label>
+				<departamento-field required ng-model="form.data.departamento"></departamento-field>
+				<ciudad-field required ng-model="form.data.ciudad"></ciudad-field>
+			  <div class="padding">
+		        <button ng-click="createNA()" class="button button-custom button button-block">Crear</button>
+		      </div>		
+		</form>
+  </div>
+  <div ng-show="tab == 'EM'" class="list">
+		<form name="formClientEM">
+			  <label class="item item-input">
+			    <input type="number" ng-model="formEM.data.nit" placeholder="Nit">
+			  </label>
+			  <label class="item item-input">
+			    <input type="text" ng-model="formEM.data.razon_social" placeholder="Razon Social">
+			  </label>
+			  <label class="item item-input">
+			    <input type="text" ng-model="formEM.data.representante_legal" placeholder="Representante legal">
+			  </label>
+			  <label class="item item-input">
+			    <input type="text" ng-model="formEM.email" placeholder="Email">
+			  </label>
+			  <label class="item item-input">
+			    <input type="number" ng-model="formEM.data.phone" placeholder="Numero Telefonico">
+			  </label>
+				<departamento-field required ng-model="formEM.data.departamento"></departamento-field>
+				<ciudad-field required ng-model="formEM.data.ciudad"></ciudad-field>
+			  <div class="padding">
+		        <button ng-click="createEM()" class="button button-custom button button-block">Crear</button>
+		      </div>		
+		</form>
+  </div>
+  </ion-content>
+    <ion-footer-bar style="height:60px!important;" align-title="left">
+      <div class="row">
+          <div class="col">
+            <button ng-init="tab = 'NA'" ng-click="tab = 'NA'" style="margin:0px;" class="button button-custom icon ion-android-person-add button button-block">Natural</button>
+          </div>
+          <div class="col" >
+           <button ng-click="tab = 'EM'" style="margin:0px;" class="button button-custom icon ion-ios-briefcase button button-block">Empresa</button>
+          </div> 
+      </div>
+    </ion-footer-bar>  
+</ion-view>

@@ -1,0 +1,18 @@
+<ion-view view-title="Comentar">
+  <ion-content ng-controller="commentCtrl" ng-init="load()">
+	<div class="list" >
+	    <a class="item item-avatar" href="#"  ng-repeat="comment in record.comments">
+	      <img src="http://tutorialsplane.com/runtest/ionic/img/profile.jpg">
+	      <h2>{{comment.data.user.name}}</h2>
+	      <p>{{comment.data.comment}}</p>
+	      <span style="color: #ADADAD;font-size: 12px;position: absolute;top: 14px;right: 16px;" class="item-note">{{comment.data.createdAt | now}}</span>
+	    </a>
+	</div>
+  </ion-content>
+	<ion-footer-bar style="border-color:#F1C504;background-image:none;!important;background-color:#F1C504;" align-title="left" class="bar-assertive">
+	  <input type="text" style="border-radius:5px;width:100%;padding:10px;"  placeholder="Escribe algo..." ng-model="form.data.comment">
+	  <div class="buttons">
+	    <button style="border:0px;background-color:#F1C504;" on-tap="send()" class="button">Enviar</button>
+	  </div>
+	</ion-footer-bar>
+</ion-view>

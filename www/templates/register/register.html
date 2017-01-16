@@ -1,0 +1,41 @@
+ <ion-view view-title="Registrarse" name="register-view" hide-nav-bar="true" >
+  <ion-content class="padding" ng-controller="registerCtrl" ng-init="load()" style="background-color: #080A35;background-image: url('img/presentation-1.jpg');background-size: cover;   background-position: center;">
+    <div class="list">
+      <form name="formRegister" novalidate>
+         <label class="item item-input item-floating-label">
+         <span class="input-label">Correo Electronico</span>
+         <input type="email" required ng-model="form.data.email" placeholder="Correo">
+         </label>
+          <label class="item item-input item-floating-label">
+         <span class="input-label">Nombres:</span>
+         <input type="text" required ng-model="form.data.name" placeholder="Nombres">
+         </label>
+          <label class="item item-input item-floating-label">
+         <span class="input-label">Apellidos:</span>
+         <input type="text" required  ng-model="form.data.last_name" placeholder="Apellidos">
+         </label>
+         <label class="item item-input item-floating-label">
+         <span class="input-label">Contraseña</span>
+         <input type="password" required  ng-model="form.data.password" placeholder="Contraseña">
+         </label>
+         <label class="item item-input item-floating-label">
+         <span class="input-label">Confirmar contraseña</span>
+         <input type="password" required  ng-model="form.data.confirmar_password" placeholder="Confirmar contraseña">
+         </label>
+      <div>
+        <br>
+        <button class="button button-block button-custom" ng-click="register()">
+          Crear Cuenta
+        </button>
+      </div>
+      <div class="col">
+        <p style="color:white;text-align:center;margin-bottom: 2px;font-weight: lighter;">Al registrarte aceptas todos los terminos y condiciones.</p>
+      </div>
+      </form>
+    </div>
+    <div class="col">
+      <p style="color:white;text-align:center;margin-bottom: 2px;font-weight: lighter;">Powered by suiteapp</p>
+      <p style="color:white;text-align:center;">2016</p>
+    </div>
+  </ion-content>
+</ion-view>

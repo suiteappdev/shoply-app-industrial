@@ -1,0 +1,55 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.phonegap.plugins.PushPlugin": {
+            "PACKAGE_NAME": "com.ionicframework.shoplyapp722350"
+        },
+        "cordova-plugin-app-version": {
+            "PACKAGE_NAME": "com.ionicframework.shoplyapp722350"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.shoplyapp722350"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.shoplyapp722350"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.ionicframework.shoplyapp722350"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.ionicframework.shoplyapp722350"
+        },
+        "cordova-plugin-printer": {
+            "PACKAGE_NAME": "com.ionicframework.shoplyapp722350"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.shoplyapp722350"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.shoplyapp722350"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.ionicframework.shoplyapp722350"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.shoplyapp722350"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.shoplyapp722350"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "871168760",
+            "PACKAGE_NAME": "com.ionicframework.shoplyapp722350"
+        },
+        "cordova-plugin-bluetooth-printer": {
+            "PACKAGE_NAME": "com.ionicframework.shoplyapp722350"
+        }
+    },
+    "dependent_plugins": {}
+}

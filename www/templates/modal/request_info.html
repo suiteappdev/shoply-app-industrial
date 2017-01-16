@@ -1,0 +1,106 @@
+<ion-modal-view >
+  <ion-header-bar style="background-color: #FF0A21;border-color: #CA0000;" class="bar bar-header bar-positive">
+    <h1 class="title" ng-show="$root.mode == 'OP'">Opciones de Pedido</h1>
+    <h1 class="title" ng-show="$root.mode == 'RE'">Opciones de Remición</h1>
+    <h1 class="title" ng-show="$root.mode == 'FA'">Opciones de Facturacion</h1>
+    <button class="button button-clear button-primary" ng-click="modal.hide()">Cancelar</button>
+  </ion-header-bar>
+  <ion-content class="padding"  ng-init="loadfrm()" style="background-color: #F1F1F1;background-image:url('img/background-content.png')">
+    <div class="list">
+    <div class="seller" ng-show="$root.user.type == 'SELLER'" ng-init="load()">
+         <label class="item item-input   item-floating-label">
+             <span class="input-label " style="color:black!important;">Cliente</span>
+             <input type="text" style="color:black!important;" required ng-model="$parent.$parent.$parent.form._client.name" placeholder="Clientes">
+         </label>
+        <a href="" cancel-button="Cerrar" has-search="true" cancel-search-button="Limpiar" clear-search-on-select="true" search-placeholder="Buscar Cliente" reset-button="Limpiar" modal-select ng-model="$parent.$parent.$parent.form._client" options="clients" modal-title="Cliente" style="float: right;font-size: 16px;position: relative;top: 0px;color: #8e8d8d;">Seleccionar Cliente
+            <div class="option">
+                {{(option.name + " " +option.last_name)}}
+            </div>
+        </a>        
+    </div>
+    <div class="seller" ng-init="getPayment()"  ng-show="$root.mode == 'FA'">
+         <label class="item item-input   item-floating-label" style="width:100%;">
+             <input type="text" style="color:black!important;" required ng-model="$parent.$parent.$parent.form._paymentMethod.data.descripcion" placeholder="Forma de Pago">
+         </label>
+        <a href="" cancel-button="Cerrar" has-search="false" cancel-search-button="Limpiar" clear-search-on-select="true" search-placeholder="Buscar Forma de pago" reset-button="Limpiar" modal-select ng-model="$parent.$parent.$parent.form._paymentMethod" options="paymentMethods" modal-title="Forma de Pago" style="float: right;font-size: 16px;position: relative;top: 0px;color: #8e8d8d;">Seleccionar Forma de pago
+            <div class="option">
+                {{(option.data.descripcion)}}
+            </div>
+        </a>        
+    </div>
+     <label ng-show="$parent.$parent.$parent.form._paymentMethod.data.descripcion" class="item item-input item-floating-label" class="item item-input item-floating-label" style="width:100%;" >
+         <span class="input-label" style="color:black!important;">Valor</span>
+         <input placeholder="Valor" ng-change="setReceived($parent.$parent.$parent.totalTyped)" type="number" style="color:black!important;" name="field" ng-model="$parent.$parent.$parent.totalTyped">
+     </label>
+     <label ng-show="$parent.$parent.$parent.form._paymentMethod.data.descripcion" class="item item-input item-floating-label" class="item item-input item-floating-label" style="width:100%;" >
+         <span class="input-label" style="color:black!important;">Descuento</span>
+         <input placeholder="Descuento" type="number" style="color:black!important;" name="field" ng-model="$parent.$parent.$parent.gdiscount">
+     </label>
+     <label  class="item item-input item-floating-label" style="width:100%;" >
+         <span class="input-label" style="color:black!important;">Ciudad</span>
+         <input type="text" style="color:black!important;" required ng-model="$parent.$parent.$parent.form.metadata.ciudad" placeholder="Ciudad">
+     </label>
+     <label  class="item item-input item-floating-label">
+         <span class="input-label " style="color:black!important;">Barrio</span>
+         <input type="text" style="color:black!important;" required ng-model="$parent.$parent.$parent.form.metadata.barrio" placeholder="Barrio">
+     </label>
+     <label  class="item item-input   item-floating-label">
+         <span class="input-label " style="color:black!important;">Direccion</span>
+         <input type="text" style="color:black!important;" required ng-model="$parent.$parent.$parent.form.metadata.direccion" placeholder="Dirección">
+     </label>
+     <label  class="item item-input  item-floating-label" style="width:100%;">
+         <span class="input-label " style="color:black!important;">Telefono</span>
+         <input type="number" style="color:black!important;" required ng-model="$parent.$parent.$parent.form.metadata.telefono" placeholder="Telefono">
+     </label>
+    </div>
+  </ion-content>
+    <ion-footer-bar  style="position: relative;bottom: -43px;" ng-show="$parent.$parent.form._paymentMethod" align-title="left">
+        <div class = "row" style="text-align:center;">
+           <div class = "col">
+             <span class="footer-label">DESCUENTO</span>
+             <span class="footer-value">{{vgdescuento  || 0 | currency:"$ " }}</span>
+           </div>
+           <div class = "col">
+             <span class="footer-label">CAMBIO</span>
+             <span class="footer-value">{{change || 0  | currency:"$ "}}</span>
+           </div>
+           <div class = "col">
+             <span class="footer-label">RECIBIDO</span>
+             <span class="footer-value">{{received || 0 || totalTyped  | currency:"$ "}}</span>
+           </div>
+        </div>
+    </ion-footer-bar> 
+    <ion-footer-bar style="bottom: 44px;" ng-hide="$root.shoppingCart.length == 0" align-title="left">
+        <div class = "row" style="text-align:center;">
+           <span class="text-center" style="position: absolute;top: -20px;font-size: 11px;font-weight: bold;">Resumen de la orden</span>
+           <div class = "col" >
+             <span class="footer-label">TOTAL</span>
+             <span class="footer-value">{{total | currency:"$ "}}</span>
+           </div>
+           <div class = "col">
+             <span class="footer-label">SUBTOTAL</span>
+             <span class="footer-value">{{subTotal  | currency:"$ "}}</span>
+           </div>
+           <div class = "col">
+             <span class="footer-label">TOTAL IVA</span>
+             <span class="footer-value">{{TotalIva  | currency:"$ "}}</span>
+           </div>
+           <div class = "col">
+             <span class="footer-label">DESCUENTO</span>
+             <span class="footer-value">{{descuento || 0 | currency:"$ "}}</span>
+           </div>
+        </div>
+    </ion-footer-bar> 
+    <ion-footer-bar ng-hide="$root.shoppingCart.length == 0" align-title="left" style="padding:0px;">
+        <button ng-show="$root.mode == 'OP'"  style="margin: 0px;width: 100%;right: 0px;   bottom: 0px;" ng-click="sendRequest()" class="button button-block button-custom icon ion-paper-airplane">
+           Realizar pedido
+        </button>
+        <button ng-show="$root.mode == 'FA'"  style="margin: 0px;width: 100%;right: 0px;
+    bottom: 0px;" ng-click="bill()" class="button button-block button-custom icon ion-card">
+           Facturar
+        </button>
+        <button ng-show="$root.mode == 'RE'"  style="margin: 0px;width: 100%;right: 0px;   bottom: 0px;" ng-click="sendRemition()" class="button button-block button-custom icon ion-paper-airplane">
+           Realizar Remisión
+        </button>
+    </ion-footer-bar> 
+</ion-modal-view>
